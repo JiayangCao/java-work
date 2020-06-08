@@ -1,0 +1,57 @@
+/*
+jmu-Java-01入门-取数字浮点数 (5分)
+本题目要求读入若干以回车结束的字符串表示的整数或者浮点数，然后将每个数中的所有数字全部加总求和。
+
+输入格式:
+每行一个整数或者浮点数。保证在浮点数范围内。
+
+输出格式:
+整数或者浮点数中的数字之和。题目保证和在整型范围内。
+
+输入样例:
+-123.01
+234
+输出样例:
+7
+9
+*/
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			
+			String s = scan.nextLine();
+			
+            char[] chars = s.toCharArray();
+            
+            int sum=0;
+            
+            for (int i=0;i<chars.length;i++){
+            	
+                	if ( chars[i] == '-' || chars[i] == '+' || chars[i] == '.') {
+                	
+                }
+                
+            	else{
+                    
+            		int tmp=Integer.valueOf(chars[ i ]) - '0';  
+            		
+                    sum+=tmp;
+                }
+            	
+            }
+		
+            System.out.println( sum );
+            
+		}
+
+	}
+
+}
