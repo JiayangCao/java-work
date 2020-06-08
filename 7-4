@@ -1,0 +1,52 @@
+/*
+编写程序，实现字符串大小写的转换并倒序输出。 (10分)
+编写程序，实现字符串大小写的转换并倒序输出。
+
+输入格式:
+输入一行字符串
+
+输出格式:
+字符串大小写的转换，并倒序输出
+
+输入样例:
+Hello World!
+输出样例:
+!DLROw OLLEh
+*/
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Scanner scan = new Scanner(System.in);
+			
+		String str = scan.nextLine();
+			
+		char[] ch = str.toCharArray();
+
+		StringBuffer buffer = new StringBuffer();
+
+		for (int i = str.length() - 1; i >= 0; i--) {
+
+			if (ch[i] >= 'A' && ch[i] <= 'Z') {
+
+				buffer.append(String.valueOf(ch[i]).toLowerCase());
+
+			} else if (ch[i] >= 'a' && ch[i] <= 'z') {
+
+				buffer.append(String.valueOf(ch[i]).toUpperCase());
+
+			}else {
+				
+				buffer.append(String.valueOf(ch[i]));
+				
+			}
+
+		}
+
+		System.out.println(buffer.toString());
+
+	}
+
+}
