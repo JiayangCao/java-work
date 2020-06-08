@@ -1,0 +1,95 @@
+/*
+设计一个BankAccount类 (10分)
+设计一个BankAccount类，这个类包括：
+（1）一个int型的balance表时账户余额。
+（2）一个无参构造方法，将账户余额初始化为0。
+（3）一个带一个参数的构造方法，将账户余额初始化为该输入的参数。
+（4）一个getBlance（）方法，返回账户余额。
+（5）一个withdraw（）方法：带一个amount参数，并从账户余额中提取amount指定的款额。
+（6）一个deposit（）方法：带一个amount参数，并将amount指定的款额存储到该银行账户上。
+设计一个Main类进行测试，分别输入账户余额、提取额度以及存款额度，并分别输出账户余额。
+
+输入格式:
+依次输入账户余额、提取额度、存款额度
+
+输出格式:
+依次输出初始账户余额、提取amount额度后的账户余额、存入amount后的账户余额
+
+输入样例:
+在这里给出一组输入。例如：
+
+700
+70
+7
+输出样例:
+在这里给出相应的输出。例如：
+
+700
+630
+637
+*/
+
+//package myclass;
+
+import java.util.*;
+
+class BankAccount{
+	
+	private int balance;
+	
+	public BankAccount() {
+		
+		balance=0;
+		
+	}
+	
+	public void balanceFirst(int balance) {
+		
+		this.balance=balance;
+		
+	}
+	
+	public int getBalance() {
+		
+		return balance;
+		
+	}
+	
+	public void withdraw (int amount){
+		
+		this.balance = this.balance - amount ;
+		
+		
+	}
+	
+	public void deposit(int amount) {
+		
+		this.balance = this.balance + amount;
+		
+	}
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		BankAccount ba = new BankAccount();
+		
+		ba.balanceFirst(sc.nextInt());
+		
+		System.out.println(ba.getBalance());
+		
+		ba.withdraw(sc.nextInt());
+		
+		System.out.println(ba.getBalance());
+		
+		ba.deposit(sc.nextInt());
+		
+		System.out.println(ba.getBalance());
+
+	}
+				
+}
