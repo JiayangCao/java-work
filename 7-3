@@ -1,0 +1,74 @@
+/*定义类 (5分)
+请补充以下代码，完成输出要求。（注意：需要提交完整代码）
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+                Scanner in = new Scanner(System.in);
+                int a,b,c,d,e;
+                a = in.nextInt();
+                b = in.nextInt();
+                c = in.nextInt();
+                d = in.nextInt();
+                e = in.nextInt();
+                RR rr = new RR();
+                double dd = rr.fun(a,b,c,d,e);
+                System.out.printf("%.2f",dd);
+    }
+}
+class RR{
+
+
+
+}
+输入格式:
+在一行中给出5个不超过1000的正整数。
+
+输出格式:
+输出5个整数的平均值，保留小数点后两位。
+
+输入样例:
+1 2 3 4 5
+输出样例:
+3.00
+*/
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+        Scanner in = new Scanner(System.in);
+        
+        int a,b,c,d,e;
+        
+        a = in.nextInt();
+        
+        b = in.nextInt();
+        
+        c = in.nextInt();
+        
+        d = in.nextInt();
+        
+        e = in.nextInt();
+        
+        RR rr = new RR();
+        
+        double dd = rr.fun(a,b,c,d,e);
+        
+        System.out.printf("%.2f",dd);
+        
+	}
+
+}
+
+class RR{
+	
+	public double fun(int a, int b, int c, int d, int e){
+		
+		return (a+b+c+d+e)/5;
+	
+	}
+	
+}
