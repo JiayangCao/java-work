@@ -1,0 +1,74 @@
+/*
+jmu-Java-02基本语法-03-身份证排序 (10分)
+输入n，然后连续输入n个身份证号。
+然后根据输入的是sort1还是sort2，执行不同的功能。输入的不是sort1或sort2，则输出exit并退出。
+输入sort1，将每个身份证的年月日抽取出来，按年-月-日格式组装，然后对组装后的年-月-日升序输出。
+输入sort2，将所有身份证按照里面的年月日升序输出。
+注意：处理输入的时候，全部使用Scanner的nextLine()方法，以免出错。
+*/
+//package myclass;
+
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		sc.nextLine();
+		
+		String Data [] = new String[n];
+		
+		String string [] = new String[n];
+		
+		for(int i = 0 ; i < n ; i ++ ) {
+			
+			string[i] = sc.nextLine();
+			
+			Data[i] = string[i].substring(6,14); 
+			
+		}
+		
+		String str = sc.nextLine();
+		
+		for (;true;){
+
+			if (str.equals("sort1")) {
+				
+				Arrays.sort(Data);
+
+					for(int i = 0 ; i < Data.length; i ++) {
+						
+						System.out.println(Data[i].substring(0,4) + "-"+Data[i].substring(4,6)+"-"+Data[i].substring(6,8));
+					}
+					
+			}else if(str.equals("sort2")){
+				
+				Arrays.sort(Data);
+				
+				for (int j = 0; j < n; j++)
+					
+					for (int k = 0; k < n; k++)
+						
+						if (string[k].contains(Data[j]))
+							
+							System.out.println(string[k].toString());
+			}else {
+				
+				break;
+				
+			}
+			
+			str = sc.nextLine();
+				
+		}
+		
+		System.out.println("exit");
+
+	}
+		
+}
+
